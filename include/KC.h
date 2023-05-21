@@ -3,7 +3,7 @@
 
 #include "KCFile.hpp"
 #include "KCassert.hpp"
-#include "KCtuple.hpp"
+#include "KCtype.hpp"
 
 #ifdef KC_GL
 
