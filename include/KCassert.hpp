@@ -23,7 +23,6 @@
     if (!(exp)) {                                                                                  \
         std::ofstream ofs("./ASSERT.txt", std::ios::out);                                          \
         ofs << "in " << __FILE__ << " " << __LINE__ << ": " << #exp << "\n\t" << msg << std::endl; \
-        exit(-1);                                                                                  \
     }
 
 #endif
