@@ -1,9 +1,9 @@
 #include <KC.h>
 
 int main() {
-    kc::KC_File file1("test1.txt", FILEMODE_READ);
+    kc::File file1("test1.txt", FILEMODE_READ);
 
-    kc::KC_File file2;
+    kc::File file2;
     file2.open("test2.txt", FILEMODE_WRITE);
     file2.putString("uwu");
 
