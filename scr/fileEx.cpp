@@ -9,5 +9,8 @@ int main() {
 
     std::cout << file1.toString() << std::endl;
 
+    file1.close();
+    file2.close();
+
     return 0;
 }

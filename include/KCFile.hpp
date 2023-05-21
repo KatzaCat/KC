@@ -114,7 +114,10 @@ struct KC_File {
     /**
      * closes the file
     */
-    inline void close() {ofs.close();}
+    inline void close() {
+        ofs.close();
+        ifs.close();
+    }
 
 private:
     std::ofstream ofs;
