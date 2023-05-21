@@ -1,11 +1,9 @@
 #ifndef KCFILE
 #define KCFILE
 
-
-#include <string>
 #include <iostream>
-#include <fstream>
-#include <sstream>
+
+#include "KCtype.hpp"
 
 // opens to read
 #define FILEMODE_READ   std::ios::in
@@ -19,7 +17,7 @@ namespace kc
     /* 
         file handler used for genaral use
     */
-    struct KC_File {
+    struct File {
         /**
          * opens the file
          * 
@@ -28,7 +26,7 @@ namespace kc
          * 
          * \returns exits with error code -1 if fail
         */
-        inline KC_File(std::string file, std::ios::openmode filemode) {
+        inline File(str file, std::ios::openmode filemode) {
             ofs.open(file.c_str(), filemode);
             ifs.open(file.c_str(), filemode);
             if (!ofs) exit(-1);
@@ -39,7 +37,7 @@ namespace kc
         /**
          * inits the object
         */
-        inline KC_File() {}
+        inline File() {}
 
         /**
          * opens a file for reading, writing, or appending
@@ -49,7 +47,7 @@ namespace kc
          * 
          * \returns true if successful or false if unsuccessful
         */
-        inline bool open(std::string file, std::ios::openmode filemode) {
+        inline bool open(str file, std::ios::openmode filemode) {
             ofs.open(file.c_str(), filemode);
             ifs.open(file.c_str(), filemode);
             if (!ofs) return false;
@@ -65,7 +63,7 @@ namespace kc
          * 
          * \returns true if successful or false if unsuccessful
         */
-        inline bool putString(std::string text) {
+        inline bool putString(str text) {
             if (!ofs.is_open()) return false;
             ofs << text.c_str();
             return true;
@@ -102,8 +100,8 @@ namespace kc
          * 
          * \returns a simplified string of the file or NULL on fail
         */
-        inline std::string toString() {
-            std::string rv, temp;
+        inline str toString() {
+            str rv, temp;
             if (!ifs) return NULL;
             while (ifs.good()) {
                 ifs >> temp;
