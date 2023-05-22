@@ -1,2 +1,0 @@
-in scr/assertEx.cpp 7: temp == 12
-	temp doesnt = 12
