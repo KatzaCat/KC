@@ -6,7 +6,7 @@
 
 #define KC_ASSERT(exp, msg) \
     if (!(exp))             \
-        {std::cout << "in " << __FILE__ << " " << __LINE__ << ": " << #exp << "\n\t" << msg << "\n" exit(-1);}
+        {std::cout << "in " << __FILE__ << " " << __LINE__ << ": " << #exp << "\n\t" << msg << "\n"; exit(-1);}
 
 #define KC_ASSERT_WITHOUT_QUIT(exp, msg) \
     if (!(exp))                          \
